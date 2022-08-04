@@ -38,6 +38,7 @@ https://pypi.org/
 https://blog.csdn.net/fengmm521/article/details/79144407
 https://www.cnblogs.com/Barrybl/p/12090534.html
 https://www.cnblogs.com/smileyes/p/7657591.html
+https://www.jianshu.com/p/9186369d577a
 ```
 
 ### __version__ = 0.0.6改动(2022-06-08)
