@@ -1,5 +1,5 @@
 # 版本更新需要保证代码兼容(原使用代码不出问题)
-__version__ = "0.0.7"
+__version__ = "0.0.8"
 
 from . import time_utils,json_utils,logging_utils
 from . import os_utils,special_utils,sklearn_utils

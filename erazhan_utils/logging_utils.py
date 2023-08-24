@@ -1,3 +1,4 @@
+# coding:utf-8
 # -*- coding = utf-8 -*-
 # @time: 2022/2/21 11:22 上午
 # @Author: erazhan
@@ -47,7 +48,7 @@ class FileLogger(object):
         self.last_sec = time.localtime().tm_sec
 
     # 创建logger
-    def create_logger(self, log_file, logger_name = "disease", update_type = "day"):
+    def create_logger(self, log_file, logger_name = "disease", update_type = "day",encoding='utf-8'):
 
         assert update_type == self.update_type, "update_type 不一致"
         TN = time.localtime()
@@ -89,12 +90,12 @@ class FileLogger(object):
         self.formatter.append(logging.Formatter("%(asctime)s - %(levelname)s : %(message)s"))
         self.formatter.append(logging.Formatter('%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s'))
 
-        self.fh = self.update_handler(self.formatter[4],log_file = log_file)
+        self.fh = self.update_handler(self.formatter[4],log_file = log_file,encoding=encoding)
 
     # 每天凌晨更新日志文件
-    def update_handler(self, formatter, log_file):
+    def update_handler(self, formatter, log_file, encoding='utf-8'):
 
-        new_fh = logging.FileHandler(log_file, mode='a')
+        new_fh = logging.FileHandler(log_file, mode='a',encoding = encoding)
         new_fh.setLevel(logging.INFO)
         new_fh.setFormatter(formatter)
         self.logger.addHandler(new_fh)
