@@ -25,4 +25,3 @@ setup(
     platforms = "any",
     install_requires = []  # ["tensorflow==2.2.0","pandas"]#自行安装
 )
-
