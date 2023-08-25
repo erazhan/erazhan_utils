@@ -60,7 +60,7 @@ https://www.cnblogs.com/smileyes/p/7657591.html
 ### __init__.py
 - 增加backto_Ntoday可直接导入, from erazhan_utils import backto_Ntoday
 - special_utils.py中文件均直接导入
-- conn_pg.py中直接导入
+- conn_pg.py中不放到__init__中，即导入改为from erazhan_utils.conn_pg import MysqlConnection
 
 #### conn_pg.py
 - 增加数据库读取，除去了文件中的账号密码，包含初始化变量charset='utf8'
@@ -71,5 +71,7 @@ https://www.cnblogs.com/smileyes/p/7657591.html
 - 增加sort_dict, 对字典数据进行排序, sort_index=0,1分别按key,value进行排序
 - 增加judge_not, 判断否定的疾病/症状，例如"没有便秘"识别到"便秘", 但并没有发生
 
-### __version__ = 0.0.8改动(未发布)
-- conn_pg.py中不放到__init__中，即导入改为from erazhan_utils.conn_pg import MysqlConnection
+### __version__ = 0.0.8改动(2023-04-18)
+- logging_utils.py中开头增加一行# coding:utf-8，部分函数增加参数encoding='utf-8'，解决日志乱码问题
+
+### __version__ = 0.0.9改动(待定)
