@@ -94,21 +94,6 @@ def sort_dict(raw_dict, sort_index = 1):
 
     return new_dict
 
-def judge_not(entity, record):
-
-    neg_words = ['没有','没','无','不','不是']
-    re_neg_words = ['没有','没','无']
-
-    for nw in neg_words:
-        if nw+entity in record:
-            return True
-
-    for rnw in re_neg_words:
-        if entity + rnw in record:
-            return True
-
-    return False
-
 if __name__ == "__main__":
 
     pass

@@ -106,6 +106,8 @@ def write_logger(text, the_FH, info_type = "info"):
 
     if info_type == "info":
         the_FH.logger.info(text)
+    elif info_type == "debug":
+        the_FH.logger.debug(text)
     elif info_type == "error":
         the_FH.logger.error(text)
     else:
