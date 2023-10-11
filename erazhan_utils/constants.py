@@ -6,6 +6,7 @@
 
 # ----------------------------------------------------------------------------------------------------------------------
 import string
+
 # 后缀类型字典
 SUFFIX_TYPE_DICT = {"图片":[".jpg",".jpeg",".png", ".webp"],
                     "PDF":[".pdf"],
@@ -13,5 +14,7 @@ SUFFIX_TYPE_DICT = {"图片":[".jpg",".jpeg",".png", ".webp"],
                     "视频":[".mp4",".mp4}"]}
 
 EN_PUNCTUATION = string.punctuation
-CN_PUNCTUATION = "，。：；？！“”（）《》【】「」"
+CN_PUNCTUATION = "，。、：；？！“”（）《》【】「」"
 ALL_PUNCTUATION = EN_PUNCTUATION + CN_PUNCTUATION
+
+SECONDS_PER_DAY = 86400

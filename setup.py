@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "erazhan_utils",
-    version = "0.0.10",  # 暂时在__init__.py文件中自定义__version__
+    version = "0.0.12",  # 暂时在__init__.py文件中自定义__version__
 
     keywords = ("erazhan_utils"),
     description = "some common tools in work",
