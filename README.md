@@ -38,7 +38,7 @@ pip install scikit-learn
 
 2、使用conn_pg.py需要安装pymysql, psycopg2
 pip install PyMySQL
-pip install psycopy2-binary
+pip install psycopg2-binary
 
 用官网镜像(http -> https)
 pip install --U erazhan_utils -i https://pypi.python.org/simple
@@ -147,6 +147,7 @@ https://www.cnblogs.com/smileyes/p/7657591.html
 
 #### __init__.py
 - 更改版本号
+- 导入以下常量或函数：`SECONDS_PER_DAY`，`calculate_polygon_area`，`extract_text_between_strings`，`extract_text_after_string`，`calculate_day_interval`，`calculate_next_day`
 
 #### math_utils.py
 - 增加函数`calculate_polygon_area`，根据坐标计算多边形面积
@@ -162,6 +163,32 @@ https://www.cnblogs.com/smileyes/p/7657591.html
 - 增加函数`calculate_day_interval`，计算两个日期之间的间隔天数
 - 增加函数`calculate_next_day`，根据起始日期和间隔天数计算结束日期
 
+### __version__ = 0.0.13改动(2023-12-27)
+
+#### __init__.py
+- 更改版本号
+
+#### special_utils.py
+- 增加函数`padding_zero`，对数字填充补齐`0`。
+- 增加函数`drop_same_words`，去除列表中的重复词。
+- 增加函数`split_text_by_puncation`，按照标点符号分割文本。
+
+#### constants.py
+- `SUFFIX_TYPE_DICT`中增加一种图片格式`.bmp`。
+
+#### math_utils.py
+- 增加函数`is_point_in_polygon`，判断某个点是否落在多边形内部。
+
+#### constant.py
+- 增加常量`FULL_ANGLE_DIGITS`，全角数字。
+
+#### judge_utils.py
+- 增加函数`split_hit_prefix_or_suffix`，找出文本中的前缀或后缀，以及剩下的文本，`split_name_and_suffix`的进阶版。
+
+### __version__ = 0.0.14改动(2024-)
+
+
 ### 备注
 - 上传`github`时创建新`branch`和`tag`，不考虑`master`分支
 - 每次提交上传前加上`git init`，以防止上传失败
+

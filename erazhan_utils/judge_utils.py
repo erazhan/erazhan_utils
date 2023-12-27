@@ -52,6 +52,26 @@ def judge_suffix_type(text, suffix_type_dict = SUFFIX_TYPE_DICT):
             return suffix_type
     return "文字"
 
+def split_hit_prefix_or_suffix(text, hit_candi_list, hit_type="prefix"):
+    """找出文本中是否命中候选集中的前缀/后缀，如果命中则返回相应的前缀/后缀，以及剩下的文本，是split_name_and_suffix的进阶版"""
+    text = text.strip()
+
+    hit_prefix_suffix = ""
+    hit_result = ""
+
+    for hit_candi in hit_candi_list:
+        if hit_type == "prefix" and text.startswith(hit_candi):
+            hit_result = text.split(hit_candi)[1]
+            hit_prefix_suffix = hit_candi
+            break
+        elif hit_type=="suffix" and text.endswith(hit_candi):
+            hit_result = text.split(hit_candi)[0]
+            hit_prefix_suffix = hit_candi
+            break
+        else:
+            pass
+
+    return hit_result, hit_prefix_suffix
 
 if __name__ == "__main__":
 

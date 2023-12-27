@@ -94,6 +94,40 @@ def sort_dict(raw_dict, sort_index = 1):
 
     return new_dict
 
+def padding_zero(num, digit=0):
+
+    assert type(num)==int and num>=0
+    str_num = str(num)
+    if digit < len(str_num):
+        digit = len(str_num)
+    if len(str_num)<digit:
+        str_num = "0" * (digit-len(str_num)) + str_num
+
+    return str_num
+
+def drop_same_words(old_list):
+    """去除重复元素，并且保持原来的顺序"""
+    new_list = []
+
+    for one_kw in old_list:
+        one_kw = one_kw.strip()
+
+        if one_kw not in new_list:
+            new_list.append(one_kw)
+
+    return new_list
+
+def split_text_by_puncation(text, punctuation = "。，,?？!！；：;:"):
+    """按标点符号拆分句子"""
+    try:
+        split_pre_texts = re.split(r"[%s]"%punctuation,text)
+    except:
+        split_pre_texts = [text]
+
+    return split_pre_texts
+
 if __name__ == "__main__":
 
-    pass
+    text = "霓虹，测试;标点,符号。"
+    result = split_text_by_puncation(text)
+    print(result)
